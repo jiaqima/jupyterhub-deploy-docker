@@ -2,7 +2,7 @@
 # Distributed under the terms of the Modified BSD License.
 
 # JupyterHub docker-compose configuration file
-version: "2"
+version: "2.4"
 
 services:
   hub-db:
@@ -27,6 +27,7 @@ services:
         JUPYTERHUB_VERSION: ${JUPYTERHUB_VERSION}
     restart: always
     image: jupyterhub
+    runtime: nvidia
     container_name: jupyterhub
     volumes:
       # Bind Docker socket on the host so we can connect to the daemon from
